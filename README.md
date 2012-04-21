@@ -1,0 +1,1 @@
+An Arduino powered scoreboard
