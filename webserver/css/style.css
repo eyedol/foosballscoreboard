@@ -1,0 +1,71 @@
+body{
+    font-family:Arial Rounded MT Bold,Arial,sans-serif;
+    background: #fff;
+    overflow:hidden;
+}
+.round{
+     margin: 0;
+    display:none;
+    text-align:center;
+    position:relative;
+}
+.current{
+    display:block;
+}
+
+@font-face {
+    font-family: Digital;
+    src: url('../fonts/digital-7.ttf');
+}
+
+
+h1{
+    margin: 10px auto;
+    font-size: 100px;
+    color:#888;
+    text-align:center;
+    line-height:150px;
+}
+.p1Score,.p2Score{
+    font-size:400px;
+    font-family: Digital;
+    line-height:300px;
+    color: #222;
+    white-space:nowrap;
+    width:50%;
+    position:absolute;
+    top:160px;
+}
+
+.p1Name,.p2Name{
+    font-size:50px;
+    line-height:900px;
+    color: #222;
+    white-space:nowrap;
+    width:50%;
+    position:absolute;
+    top:160px;
+}
+
+.p1Score{
+    right: 50%;
+    text-align:right;
+    margin-right:100px;
+}
+.p2Score{
+    left: 50%;
+    text-align:left;
+    margin-left:100px;
+}
+
+.p1Name{
+    right: 50%;
+    text-align:right;
+    margin-right:100px;
+}
+.p2Name{
+    left: 50%;
+    text-align:left;
+    margin-left:100px;
+}
+
