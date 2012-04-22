@@ -1,14 +1,16 @@
 <?php
     define('VERSION',2);
     include_once('score.php');
+    $update_score = new UpdateScore();
     if (isset($_GET['score']) && isset($_GET['team']))
     {
         $score = $_GET['score'];
         $team = $_GET['team'];
 
-        $update_score = new UpdateScore($team,$score);
-        $score = $update_score->scores();
+        $score = $update_score->update($team,$score);
 
+    }else {
+        $score = $update_score->scores(); 
     }
 
 ?>

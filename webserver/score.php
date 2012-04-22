@@ -5,16 +5,16 @@ class  UpdateScore{
     private $team;
     private $score;
     
-    public function __construct($team,$score)
+    public function __construct()
     {
-        $this->team = $team;
-        $this->score = $score;
+       
         $this->db = new Db();
-        $this->update();
     }
 
-    public function update() 
+    public function update($team,$score) 
     {
+         $this->team = $team;
+        $this->score = $score;
         if( $this->team AND $this->score)
         {
             //update score 
