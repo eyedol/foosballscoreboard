@@ -8,6 +8,7 @@
         $team = $_GET['team'];
 
         $score = $update_score->update($team,$score);
+        $score = $update_score->scores();
 
     }else {
         $score = $update_score->scores(); 
