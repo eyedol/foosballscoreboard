@@ -1,15 +1,19 @@
-
+/*
+ *Foosball scoreboard. 
+ *Tracks the scores of a foosball game.
+ *
+ *- Uses input from push button to register score
+ *- Pushes score to an webserver
+ *- Print's score to a 7 segment LED display 
+ *
+ */
+ 
 #include <SPI.h>
 #include <Ethernet.h>
-/*
-  DigitalReadSerial
- Reads a digital input on pin 2, prints the result to the serial monitor
- 
- This example code is in the public domain.
- */
 
-// digital pin 2 has a pushbutton attached to it. Give it a name:
-const int ledCount = 14;
+
+//Number of LED's segments
+const int ledCount = 7;
 int pushButtonA = 2;
 int pushButtonB = 3;
 int pinA = 13;
@@ -21,6 +25,8 @@ int blue_score = 0;
 int buttonStateA = 0;
 int buttonStateB = 0;
 
+//Digitial output pins for LED display
+//One Display
 int ledPins[] = {
   3,4,5,6,7,8,9
 };
@@ -124,7 +130,7 @@ void loop() {
       pressedA = HIGH; 
 
       red_score ++;
-      // post_score_online(pushButtonA);
+      post_score_online(pushButtonA);
       displayScore(red_score, 3,);
     }
   }
@@ -161,7 +167,7 @@ void loop() {
       Serial.println("Team B");
 
       blue_score ++;
-      //     post_score_online(pushButtonB);
+      post_score_online(pushButtonB);
       pressedB = HIGH; 
     }
   }
@@ -215,6 +221,7 @@ void post_score_online(int teamID){
   client.stop();
 }
 
+//Prints out the score to the LED display screen
 void displayScore(byte digit, int startPin) {
   //Serial.println(digit);
   for (byte segCount = 0; segCount < 7; ++segCount) {
