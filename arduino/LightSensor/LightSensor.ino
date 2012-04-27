@@ -29,7 +29,7 @@ double mean_value_A=0;
 double mean_value_B=0;
 
 
-double TOLERANCE =10.0;
+double TOLERANCE =30.0;
 int start_pass=0;
 
 int MIN_PAUSE = 500;
@@ -40,7 +40,7 @@ int MAX_WAIT = 1000;
 */
 void setup(){
   pinMode(light_in_pin_A,INPUT);
-   pinMode(light_in_pin_B,INPUT);
+  pinMode(light_in_pin_B,INPUT);
   Serial.begin(9600);
   Serial.println("Start setup");
 }
@@ -67,7 +67,7 @@ void loop(){
 void monitor_team_a(){
   int lightLevel_A = analogRead(light_in_pin_A);  
 
-  if(checkScore(lightLevel_A,mean_value_B)){
+  if(checkScore(lightLevel_A,mean_value_A)){
 
     //Avoid registering same score many times. Give the ball time to pass            
     if(ball_has_passed_A){     
@@ -141,7 +141,7 @@ void calibrate(){
 
   //Calibrate the next Light sensor
   for (i=0;i<3000;i++){
-    int read_value= analogRead(light_in_pin_A);   
+    int read_value= analogRead(light_in_pin_B);   
     if(read_value<0){     
       i--;          
     }
