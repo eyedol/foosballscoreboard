@@ -131,7 +131,7 @@ void loop() {
 
       red_score ++;
       post_score_online(pushButtonA);
-      displayScore(red_score, 3,);
+      displayScore(red_score, 3);
     }
   }
   else{
